@@ -5,6 +5,10 @@ VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ffmpeg-api", "ffmpeg-api\ffmpeg-api.csproj", "{8C9D2597-20AE-4B88-9B86-80B1E3BEEF43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ffmpeg.Library", "ffmpeg.library\Ffmpeg.Library.csproj", "{A5677F3F-7C7C-42D0-8C44-129E6976A27C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ffmpeg.LibraryTests", "Ffmpeg.LibraryTests\Ffmpeg.LibraryTests.csproj", "{7D6E0B97-B23B-40FF-B262-4582B648189B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8C9D2597-20AE-4B88-9B86-80B1E3BEEF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C9D2597-20AE-4B88-9B86-80B1E3BEEF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C9D2597-20AE-4B88-9B86-80B1E3BEEF43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5677F3F-7C7C-42D0-8C44-129E6976A27C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5677F3F-7C7C-42D0-8C44-129E6976A27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5677F3F-7C7C-42D0-8C44-129E6976A27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5677F3F-7C7C-42D0-8C44-129E6976A27C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D6E0B97-B23B-40FF-B262-4582B648189B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6E0B97-B23B-40FF-B262-4582B648189B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6E0B97-B23B-40FF-B262-4582B648189B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6E0B97-B23B-40FF-B262-4582B648189B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
