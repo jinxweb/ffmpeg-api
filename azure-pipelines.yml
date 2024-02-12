@@ -28,3 +28,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-hub-jenkinsron-repo'
+    repository: 'jenkinsron/ffmpeg-api'
+    command: 'buildAndPush'
+    Dockerfile: './Dockerfile'
+    tags: 'latest'
