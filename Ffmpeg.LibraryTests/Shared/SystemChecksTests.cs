@@ -12,9 +12,10 @@ namespace Ffmpeg.Library.Shared.Tests
     public class SystemChecksTests
     {
         [TestMethod()]
+        [TestCategory("Integration")]
         public void IsFFMpegInstalledTest()
         {
-            bool result = SystemChecks.IsFFMpegInstalled("c:/apps/ffmpeg-6.0/bin"); 
+            bool result = SystemChecks.IsFFMpegInstalled("/usr/bin"); 
 
             Assert.IsTrue(result);
         }

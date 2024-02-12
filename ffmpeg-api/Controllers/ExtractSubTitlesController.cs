@@ -15,6 +15,12 @@ namespace ffmpeg_api.Controllers
                 _subtitlesService = subtitlesService;
         }
 
+        /// <summary>
+        /// Extracts subtitles from a video file.  The video file must already contain subtitles
+        /// and be less than 100MB in size.
+        /// </summary>
+        /// <param name="videoFile"></param>
+        /// <returns>Extracted Text</returns>
         [HttpGet]
         public async Task<IActionResult> Get(string videoFile)
         {

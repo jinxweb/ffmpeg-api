@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,15 +11,20 @@ namespace Ffmpeg.Library.Shared
 {
     public static class SystemChecks
     {
-        public static bool IsFFMpegInstalled(string pathToffmpeg = "")
+        public static bool IsFFMpegInstalled(string pathToffmpeg = "/usr/bin")
         {
-            string ffmpegPath = Path.Combine(pathToffmpeg, "ffmpeg.exe");
-            
             try
             {
+                string ffmpegBinary = "ffmpeg";
+                // Adjust for Windows naming convention if running on Windows
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    ffmpegBinary += ".exe";
+                }
+
                 using (var process = new Process())
                 {
-                    process.StartInfo.FileName = ffmpegPath;
+                    process.StartInfo.FileName = Path.Combine(pathToffmpeg,ffmpegBinary);
                     process.StartInfo.Arguments = "-version";
                     process.StartInfo.RedirectStandardOutput = true;
                     process.StartInfo.RedirectStandardError = true;

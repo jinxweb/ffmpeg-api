@@ -10,6 +10,7 @@ using System.Transactions;
 namespace Ffmpeg.Library.Concrete.Tests
 {
     [TestClass()]
+    [TestCategory("Integration")]
     public class SubtitlesServiceTests
     {
         [TestMethod()]

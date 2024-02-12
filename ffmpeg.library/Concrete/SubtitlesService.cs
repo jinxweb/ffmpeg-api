@@ -14,11 +14,13 @@ namespace Ffmpeg.Library.Concrete
     {
         Logger<ISubtitlesService> _logger = null;
 
-        public SubtitlesService(string pathToffmpeg = "c:/apps/ffmpeg-6.0/bin", Logger<ISubtitlesService> logger = null)
+        public SubtitlesService(string pathToffmpeg ="/usr/bin", Logger<ISubtitlesService> logger = null)
         {
             GlobalFFOptions.Configure(options => options.BinaryFolder = pathToffmpeg);
             _logger = logger;
         }
+
+
 
         public async Task<string> ExtractSubTitles(string videoFilePath)
         {
