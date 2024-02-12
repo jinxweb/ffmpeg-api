@@ -20,13 +20,21 @@ namespace ffmpeg_api.Controllers
         /// and be less than 100MB in size.
         /// </summary>
         /// <param name="videoFile"></param>
+        /// <param name="key"></param>
         /// <returns>Extracted Text</returns>
         [HttpGet]
-        public async Task<IActionResult> Get(string videoFile)
+        public async Task<IActionResult> Get(string videoFile, string key)
         {
             if (string.IsNullOrEmpty(videoFile))
             {
                 return BadRequest("videoFile is required");
+            }
+
+            string accessKey = Environment.GetEnvironmentVariable("FFMPEG_API_KEY") ?? "1972";  
+
+            if (string.IsNullOrEmpty(key) || key != accessKey)
+            {
+                return Unauthorized();
             }
 
             try

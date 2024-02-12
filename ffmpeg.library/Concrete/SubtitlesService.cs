@@ -26,7 +26,12 @@ namespace Ffmpeg.Library.Concrete
         {
             _logger?.LogInformation($"Extracting subtitles from {videoFilePath}");  
 
-            string tmpDir = Environment.GetEnvironmentVariable("TMP") ?? "./tmp";
+            string tmpDir = Environment.GetEnvironmentVariable("TMP") ?? "/tmp";
+
+            if (!Directory.Exists(tmpDir))
+            {
+                Directory.CreateDirectory(tmpDir);
+            }
 
             string file = videoFilePath;
             string subtitlesFilePath = Path.Combine(tmpDir, Guid.NewGuid().ToString() + ".srt");
